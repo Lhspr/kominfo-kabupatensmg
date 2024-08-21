@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { CarouselHomepage } from '@/components/CarouselHomepage';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div>testing</div>
-    
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Selamat Datang</h1>
+      <CarouselHomepage />
+    </div>
   );
 }

@@ -2,33 +2,34 @@ import { Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import icon from '@/public/next.svg';
+import icon from "@/assets/kominfo5.png";
 
 const NavigationBar = () => {
   return (
-    <Navbar fluid rounded>
-      <Navbar.Brand as={Link} href="https://flowbite-react.com">
+    <Navbar fluid rounded className="flex items-center justify-center">
+      <Navbar.Brand as={Link} href="https://flowbite-react.com" className="flex items-center">
         <Image
+          height={55} 
+          width={200} 
           src={icon}
-          className="mr-3 h-6 sm:h-9"
+          className="ml-0 mr-3 h-auto sm:h-auto" // Menghapus margin kiri untuk memastikan logo berada di kiri
           alt="Flowbite React Logo"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
-        </span>
       </Navbar.Brand>
       <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="#" active>
-          Home
-        </Navbar.Link>
-        <Navbar.Link as={Link} href="#">
-          About
-        </Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
+      <div className="flex-grow flex justify-center items-center">
+        <Navbar.Collapse className="flex justify-center items-center">
+          <Navbar.Link href="#" active>
+            Beranda
+          </Navbar.Link>
+          <Navbar.Link as={Link} href="#">
+            Profil
+          </Navbar.Link>
+          <Navbar.Link href="#">PPID</Navbar.Link>
+          <Navbar.Link href="#">Berita</Navbar.Link>
+          <Navbar.Link href="#">Contact</Navbar.Link>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
   );
 };

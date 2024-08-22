@@ -1,4 +1,4 @@
-import { Navbar } from 'flowbite-react';
+import { Dropdown, Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -28,12 +28,14 @@ const NavigationBar = () => {
       <Navbar.Toggle />
       <div className="flex-grow flex justify-center items-center">
         <Navbar.Collapse className="flex justify-center items-center">
-          <Navbar.Link href="#" active>
+          <Navbar.Link href="/" active>
             Beranda
           </Navbar.Link>
-          <Navbar.Link as={Link} href="#">
-            Profil
-          </Navbar.Link>
+          <Dropdown label='profil'inline>
+            <Dropdown.Item as='div'className='p-0'>
+              <Link className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600'href={'/struktur-organisasi'}>Struktur Organisasi</Link>
+            </Dropdown.Item>
+          </Dropdown>
           <Navbar.Link href="#">PPID</Navbar.Link>
           <Navbar.Link href="#">Berita</Navbar.Link>
           <Navbar.Link href="#">Contact</Navbar.Link>

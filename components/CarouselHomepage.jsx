@@ -8,7 +8,7 @@ import gambar3 from "@/assets/kominfo6.png";
 
 export function CarouselHomepage() {
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+    <div className="min-h-screen h-56 sm:h-64 xl:h-80 2xl:h-96 my-20">
       <Carousel onSlideChange={(index) => console.log('onSlideChange()', index)}>
         <div className="flex h-full items-center justify-center bg-blue-400 dark:bg-blue-700 dark:text-white">
           <Image src={gambar1} alt="Gambar 1" className="object-cover h-full w-full" />

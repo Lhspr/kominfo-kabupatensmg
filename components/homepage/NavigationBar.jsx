@@ -2,17 +2,17 @@ import { Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import icon from "@/assets/kominfo5.png";
+import icon from "@/assets/kominfo7.png";
 
 const NavigationBar = () => {
   return (
-    <Navbar fluid rounded className="flex items-center justify-center">
-      <Navbar.Brand as={Link} href="https://flowbite-react.com" className="flex items-center">
+    <Navbar fluid rounded className="flex items-center justify-items-stretch bg-transparant sticky top-0 hover:absolute">
+      <Navbar.Brand as={Link} href="https://flowbite-react.com" className="flex justify-self-start">
         <Image
           height={55} 
           width={200} 
           src={icon}
-          className="ml-0 mr-3 h-auto sm:h-auto" // Menghapus margin kiri untuk memastikan logo berada di kiri
+          className="ml-0 mr-3 h-auto sm:h-auto w-32 h-32" // Menghapus margin kiri untuk memastikan logo berada di kiri
           alt="Flowbite React Logo"
         />
       </Navbar.Brand>

@@ -1,18 +1,27 @@
 import { Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import icon from "@/assets/kominfo7.png";
+import { useAmp } from 'next/amp';
 
 const NavigationBar = () => {
+  const [isActive, setIsActive] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      window.scrollY > 60 ? setIsActive(true) : setIsActive(false)
+    })
+  })
   return (
-    <Navbar fluid rounded className="flex items-center justify-items-stretch bg-transparant sticky top-0 hover:absolute">
+    <Navbar fluid rounded className={`${isActive ? "bg-white py-4 shadow-md" : "bg-none py-6"
+      } fixed w-full z-10 transition-all`}>
       <Navbar.Brand as={Link} href="https://flowbite-react.com" className="flex justify-self-start">
         <Image
-          height={55} 
-          width={200} 
+          height={55}
+          width={200}
           src={icon}
-          className="ml-0 mr-3 h-auto sm:h-auto w-32 h-32" // Menghapus margin kiri untuk memastikan logo berada di kiri
+          className="ml-0 mr-3 sm:h-auto w-36 h-36" // Menghapus margin kiri untuk memastikan logo berada di kiri
           alt="Flowbite React Logo"
         />
       </Navbar.Brand>

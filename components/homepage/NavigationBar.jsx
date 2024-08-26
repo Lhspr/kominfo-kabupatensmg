@@ -36,9 +36,22 @@ const NavigationBar = () => {
               <Link className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600' href={'/struktur-organisasi'}>Struktur Organisasi</Link>
             </Dropdown.Item>
           </Dropdown>
-          <Dropdown label='Berita' inline>
-            <Dropdown.Item as='div' className='p-0'>
-              <Link className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600' href={'/berita-semarang'}>Berita Semarang</Link>
+          <Dropdown label="Berita" inline>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                href="/berita-semarang"
+              >
+                Berita Semarang
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                href="/berita-transparasi"
+              >
+                Berita Transparasi
+              </Link>
             </Dropdown.Item>
           </Dropdown>
           <Navbar.Link href="LINK">PPID</Navbar.Link>

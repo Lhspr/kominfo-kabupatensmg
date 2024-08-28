@@ -90,7 +90,27 @@ const NavigationBar = () => {
           <Navbar.Link href="#" className="hover:text-blue-500">
             Contact
           </Navbar.Link>
-        </Navbar.Collapse>
+        
+
+        <Dropdown label="Download" inline>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm hover:text-blue-500"
+                href="/dwnld-regulasi"
+              >
+                Regulasi
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm hover:text-blue-500"
+                href="/dwnld-materi"
+              >
+                Materi
+              </Link>
+            </Dropdown.Item>
+          </Dropdown>
+          </Navbar.Collapse>
       </div>
     </Navbar>
   );

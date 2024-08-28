@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card } from "flowbite-react";
 import gambar3 from "@/assets/kominfo7.png";
-import gambar4 from "@/assets/gempa-cianjur.jpeg"
+import gambar4 from "@/assets/gempa-cianjur.jpeg";
 import Image from "next/image";
 
 export function BeritaTransparasi() {
@@ -40,6 +40,20 @@ export function BeritaTransparasi() {
         "Pemerintah terus mempercepat program vaksinasi untuk menghadapi varian baru COVID-19 yang mulai menyebar di beberapa wilayah.",
       image: gambar3,
     },
+    {
+      id: 5,
+      title: "Judul Berita 5",
+      description:
+        "Deskripsi singkat untuk berita ke-5. Detail tentang topik berita ini.",
+      image: gambar3,
+    },
+    {
+      id: 6,
+      title: "Judul Berita 6",
+      description:
+        "Deskripsi singkat untuk berita ke-6. Detail tentang topik berita ini.",
+      image: gambar3,
+    },
   ];
 
   // Filter card berdasarkan searchTerm
@@ -69,27 +83,38 @@ export function BeritaTransparasi() {
       </div>
 
       {/* Grid container untuk card */}
-      <div className="grid grid-rows-2 grid-flow-col gap-y-5 gap-x-5 pt-5 content-around">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 pt-10 w-full max-w-screen-lg">
         {filteredCards.length > 0 ? (
           filteredCards.map((card) => (
-            <Card
-              key={card.id}
-              renderImage={() => (
-                <Image width={250} height={125} src={card.image} alt={card.title} />
-              )}
-              className="object-cover h-full w-full"
-              horizontal
-            >
-              <h5 className="text-lg font-medium tracking-tight text-gray-900 dark:text-white">
-                {card.title}
-              </h5>
-              <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-                {card.description}
-              </p>
-              <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                Read more
-              </a>
-            </Card>
+            <div key={card.id} className="flex justify-center">
+              <Card className="w-full h-full max-w-sm flex flex-col justify-between shadow-lg">
+                <div>
+                  <Image
+                    width={400}
+                    height={200}
+                    src={card.image}
+                    alt={card.title}
+                    className="object-cover w-full h-48"
+                  />
+                  <div className="p-4">
+                    <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
+                      {card.title}
+                    </h5>
+                    <p className="text-sm text-gray-700 dark:text-gray-400">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <a
+                    href="#"
+                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    Read more
+                  </a>
+                </div>
+              </Card>
+            </div>
           ))
         ) : (
           <p className="text-lg font-semibold text-gray-500 dark:text-gray-400">

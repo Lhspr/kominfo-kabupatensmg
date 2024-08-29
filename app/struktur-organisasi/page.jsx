@@ -1,12 +1,8 @@
-import StrukturOrganisasi from '@/components/struktur-organisasi/StrukturOrganisasi'
-import React from 'react'
-
-const Page = () => {
+import { StrukturOrganisasi } from "@/components/struktur-organisasi/StrukturOrganisasi";
+export default function strukturpage() {
   return (
-    <div className='min-h-screen text-black'>
-        <StrukturOrganisasi/>
+    <div className="container mx-auto">
+      <StrukturOrganisasi/>
     </div>
-  )
+  );
 }
-
-export default Page

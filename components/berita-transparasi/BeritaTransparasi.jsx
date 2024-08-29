@@ -83,7 +83,7 @@ export function BeritaTransparasi() {
       </div>
 
       {/* Grid container untuk card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 pt-10 w-full max-w-screen-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 pt-10 w-full max-w-screen-lg">
         {filteredCards.length > 0 ? (
           filteredCards.map((card) => (
             <div key={card.id} className="flex justify-center">

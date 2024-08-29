@@ -7,7 +7,7 @@ export function Video() {
     <Card
       className="max-w-sm"
       imgAlt="Kegiatan Diskominfo"
-      imgSrc="/path/to/your/uploaded/image.png" // ganti dengan path yang sesuai dari gambar yang Anda unggah
+      imgSrc="/path/to/your/uploaded/image.png" 
     >
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         Galeri Terbaru Diskominfo

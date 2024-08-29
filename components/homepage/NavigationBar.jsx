@@ -73,7 +73,7 @@ const NavigationBar = () => {
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Foto'}
+                href={'/Gallery-foto'}
               >
                 Foto
               </Link>
@@ -81,7 +81,7 @@ const NavigationBar = () => {
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Video'}
+                href={'/Gallery-video'}
               >
                 Video
               </Link>

@@ -1,12 +1,30 @@
 "use client";
 
+import { useEffect } from 'react';
 import { Footer } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-import KominfoLogo from '@/assets/kominfo7.png'; // Ensure the image path is correct
+import KominfoLogo from '@/assets/kominfo7.png';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 export function Footer1() {
+  useEffect(() => {
+    // Check if the map is already initialized
+    if (!L.DomUtil.get('map')._leaflet_id) {
+      const map = L.map('map').setView([-7.104543, 110.411766], 15); // Koordinat Diskominfo
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([-7.104543, 110.411766]).addTo(map)
+        .bindPopup('Dinas Komunikasi Dan Informatika Kabupaten Semarang')
+        .openPopup();
+    }
+  }, []);
+
   return (
-    <Footer container className="bg-[#007bff] text-white"> {/* Background color blue, text color white */}
+    <Footer container className="bg-[#007bff] text-white">
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div className="flex flex-col items-start">
@@ -33,10 +51,14 @@ export function Footer1() {
           </div>
         </div>
         <Footer.Divider className="border-gray-400" />
+
+        {/* OpenStreetMap with Leaflet.js */}
+        <div id="map" style={{ height: '300px', width: '100%' }}></div>
+
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright href="#" by="Diskominfo™" year={2024} className="text-white" />
         </div>
       </div>
     </Footer>
-  );
+  );
 }

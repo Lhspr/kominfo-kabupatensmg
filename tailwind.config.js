@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const flowbite = require('flowbite-react/tailwind');
+// const hero = require('@/assets/bg1.jpg')
 
 module.exports = {
   content: [
@@ -14,7 +15,8 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero': "url('/assets/bg1.jpg')",
       },
     },
   },

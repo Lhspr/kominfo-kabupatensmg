@@ -4,7 +4,7 @@ import Jumbotron from '@/components/Jumbotron';
 import { CarouselDown } from '@/components/CarouselDown';
 export default function HomePage() {
   return (
-    <div className="container mx-auto">
+    <div className="min-h-screen mx-auto">
       <Jumbotron/>
       <CarouselHomepage />
       <Berita />

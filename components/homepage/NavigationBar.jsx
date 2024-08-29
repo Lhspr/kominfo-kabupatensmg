@@ -19,9 +19,8 @@ const NavigationBar = () => {
     <Navbar
       fluid
       rounded
-      className={`fixed w-full z-10 transition-all duration-300 ${
-        isActive ? "bg-white shadow-md text-gray-800" : "bg-transparent text-white"
-      }`}
+      className={`fixed w-full z-10 transition-all duration-300 ${isActive ? "bg-white shadow-md text-gray-800" : "bg-transparent text-white"
+        }`}
     >
       <Navbar.Brand as={Link} href="/" className="flex justify-self-start">
         <Image
@@ -39,23 +38,23 @@ const NavigationBar = () => {
             Beranda
           </Navbar.Link>
           <Dropdown label="Profil" inline>
-          <Dropdown.Item as="div" className="p-0">
-            <Link
-              className="block px-4 py-2 text-sm hover:text-blue-500"
-              href={'/struktur-organisasi'}
-            >
-              Struktur Organisasi
-            </Link>
-          </Dropdown.Item>
-          <Dropdown.Item as="div" className="p-0">
-            <Link
-              className="block px-4 py-2 text-sm hover:text-blue-500"
-              href={'/visi-misi'}
-            >
-              visi misi
-            </Link>
-          </Dropdown.Item>
-        </Dropdown>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm hover:text-blue-500"
+                href={'/struktur-organisasi'}
+              >
+                Struktur Organisasi
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item as="div" className="p-0">
+              <Link
+                className="block px-4 py-2 text-sm hover:text-blue-500"
+                href={'/visi-misi'}
+              >
+                visi misi
+              </Link>
+            </Dropdown.Item>
+          </Dropdown>
           <Dropdown label="Berita" inline>
             <Dropdown.Item as="div" className="p-0">
               <Link
@@ -74,14 +73,14 @@ const NavigationBar = () => {
               </Link>
             </Dropdown.Item>
           </Dropdown>
-          <Navbar.Link href="LINK" className="hover:text-blue-500">
+          <Navbar.Link href="LINK" className="hover:text-blue-500 text-white">
             PPID
           </Navbar.Link>
           <Dropdown label="Gallery" inline>
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Foto'}
+                href={'/Gallery-foto'}
               >
                 Foto
               </Link>
@@ -89,18 +88,18 @@ const NavigationBar = () => {
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Video'}
+                href={'/Gallery-video'}
               >
                 Video
               </Link>
             </Dropdown.Item>
           </Dropdown>
-          <Navbar.Link href="#" className="hover:text-blue-500">
+          <Navbar.Link href="#" className="hover:text-blue-500 text-white">
             Contact
           </Navbar.Link>
-        
 
-        <Dropdown label="Download" inline>
+
+          <Dropdown label="Download" inline>
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
@@ -118,7 +117,7 @@ const NavigationBar = () => {
               </Link>
             </Dropdown.Item>
           </Dropdown>
-          </Navbar.Collapse>
+        </Navbar.Collapse>
       </div>
     </Navbar>
   );

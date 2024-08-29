@@ -39,15 +39,23 @@ const NavigationBar = () => {
             Beranda
           </Navbar.Link>
           <Dropdown label="Profil" inline>
-            <Dropdown.Item as="div" className="p-0">
-              <Link
-                className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/struktur-organisasi'}
-              >
-                Struktur Organisasi
-              </Link>
-            </Dropdown.Item>
-          </Dropdown>
+          <Dropdown.Item as="div" className="p-0">
+            <Link
+              className="block px-4 py-2 text-sm hover:text-blue-500"
+              href={'/struktur-organisasi'}
+            >
+              Struktur Organisasi
+            </Link>
+          </Dropdown.Item>
+          <Dropdown.Item as="div" className="p-0">
+            <Link
+              className="block px-4 py-2 text-sm hover:text-blue-500"
+              href={'/visi-misi'}
+            >
+              visi misi
+            </Link>
+          </Dropdown.Item>
+        </Dropdown>
           <Dropdown label="Berita" inline>
             <Dropdown.Item as="div" className="p-0">
               <Link
@@ -73,7 +81,7 @@ const NavigationBar = () => {
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Gallery-foto'}
+                href={'/Foto'}
               >
                 Foto
               </Link>
@@ -81,7 +89,7 @@ const NavigationBar = () => {
             <Dropdown.Item as="div" className="p-0">
               <Link
                 className="block px-4 py-2 text-sm hover:text-blue-500"
-                href={'/Gallery-video'}
+                href={'/Video'}
               >
                 Video
               </Link>
@@ -116,4 +124,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default NavigationBar;

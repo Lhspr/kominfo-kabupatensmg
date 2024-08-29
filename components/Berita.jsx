@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card } from "flowbite-react";
@@ -7,41 +6,51 @@ import Image from "next/image";
 
 export function Berita() {
   return (
-    <div className="flex justify-center mb-32" >
-    <div className="grid grid-rows-2 grid-flow-col gap-y-5 gap-x-5 content-around">
-      <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full " horizontal>
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-      </Card>
-      <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full " horizontal>
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-      </Card>
-      <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full " horizontal>
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-      </Card>
-      <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full " horizontal>
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-      </Card>
-    </div>
+    <div className="flex justify-center mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <Card className="max-w-sm mx-4">
+          <Image width={500} height={250} src={gambar2} alt="Gambar 1" className="object-cover h-full w-full" />
+          <div className="p-5">
+            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Gempa bumi dengan kekuatan 5,6 SR mengguncang wilayah Cianjur, menyebabkan kerusakan parah pada ratusan rumah dan fasilitas umum.
+            </p>
+            <a href="#" className="text-blue-600 hover:underline">
+              Read more
+            </a>
+          </div>
+        </Card>
+        <Card className="max-w-sm mx-4">
+          <Image width={500} height={250} src={gambar2} alt="Gambar 2" className="object-cover h-full w-full" />
+          <div className="p-5">
+            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Gempa bumi dengan kekuatan 5,6 SR mengguncang wilayah Cianjur, menyebabkan kerusakan parah pada ratusan rumah dan fasilitas umum.
+            </p>
+            <a href="#" className="text-blue-600 hover:underline">
+              Read more
+            </a>
+          </div>
+        </Card>
+        <Card className="max-w-sm mx-4">
+          <Image width={500} height={250} src={gambar2} alt="Gambar 3" className="object-cover h-full w-full" />
+          <div className="p-5">
+            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Gempa bumi dengan kekuatan 5,6 SR mengguncang wilayah Cianjur, menyebabkan kerusakan parah pada ratusan rumah dan fasilitas umum.
+            </p>
+            <a href="#" className="text-blue-600 hover:underline">
+              Read more
+            </a>
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }

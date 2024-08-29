@@ -48,7 +48,7 @@ export function CarouselHomepage() {
 
         {/* Carousel */}
         <div className="w-3/4 ml-4">
-          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <div className="h-full">
             <Carousel onSlideChange={(index) => console.log('onSlideChange()', index)}>
               <div className="flex h-full items-center justify-center bg-[#B3DDF2] dark:bg-[#85B7CC] dark:text-white">
                 <Image src={gambar1} alt="Gambar 1" className="object-cover h-full w-full" />

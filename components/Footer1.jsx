@@ -25,7 +25,12 @@ export function Footer1() {
 
   return (
     <Footer container className="bg-[#007bff] text-white">
+
       <div className="w-full">
+        {/* OpenStreetMap with Leaflet.js */}
+        <div id="map" style={{ height: '300px', width: '100%' }}></div>
+        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        </div>
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div className="flex flex-col items-start">
             <div className="flex items-center space-x-3">
@@ -52,13 +57,8 @@ export function Footer1() {
         </div>
         <Footer.Divider className="border-gray-400" />
 
-        {/* OpenStreetMap with Leaflet.js */}
-        <div id="map" style={{ height: '300px', width: '100%' }}></div>
-
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="Diskominfo™" year={2024} className="text-white" />
-        </div>
+        <Footer.Copyright href="#" by="Diskominfo™" year={2024} className="text-white" />
       </div>
     </Footer>
-  );
+  );
 }

@@ -4,13 +4,13 @@ import { Dropdown, Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { FaSearch, FaBars } from 'react-icons/fa'; // Import ikon yang diperlukan
+import { FaSearch, FaBars } from 'react-icons/fa'; 
 import icon from "@/assets/kominfo7.png";
 
 const NavigationBar = () => {
   const [isActive, setIsActive] = useState(false);
-  const [showSearch, setShowSearch] = useState(false); // State untuk mengontrol tampilan input pencarian
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State untuk mengontrol tampilan menu di perangkat mobile
+  const [showSearch, setShowSearch] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +21,11 @@ const NavigationBar = () => {
   }, []);
 
   const toggleSearch = () => {
-    setShowSearch(!showSearch); // Toggle untuk menampilkan atau menyembunyikan input pencarian
+    setShowSearch(!showSearch); 
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle untuk menampilkan atau menyembunyikan menu di perangkat mobile
+    setIsMenuOpen(!isMenuOpen); 
   };
 
   return (
@@ -140,21 +140,21 @@ const NavigationBar = () => {
               </Dropdown.Item>
             </Dropdown>
           </Navbar.Collapse>
-           {/* Icon untuk input pencarian */}
-           <button onClick={toggleSearch} className="p-2 text-white hover:text-blue-500">
-              <FaSearch size={20} />
-            </button>
+          {/* Icon untuk input pencarian */}
+          <button onClick={toggleSearch} className="p-2 text-white hover:text-blue-500">
+            <FaSearch size={20} />
+          </button>
 
-            {/* Tampilkan input pencarian jika showSearch bernilai true */}
-            {showSearch && (
-              <div className="w-full max-w-screen-sm sm:max-w-screen-md mt-2 md:mt-0">
-                <input
-                  type="search"
-                  placeholder="Cari..."
-                  className="w-full p-2 sm:p-3 rounded-md bg-white text-black"
-                />
-              </div>
-            )}
+          {/* Tampilkan input pencarian jika showSearch bernilai true */}
+          {showSearch && (
+            <div className="w-full max-w-screen-sm sm:max-w-screen-md mt-2 md:mt-0">
+              <input
+                type="search"
+                placeholder="Cari..."
+                className="w-full p-2 sm:p-3 rounded-md bg-white text-black"
+              />
+            </div>
+          )}
         </div>
       </div>
     </Navbar>

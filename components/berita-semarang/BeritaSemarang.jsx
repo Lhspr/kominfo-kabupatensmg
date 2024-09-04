@@ -72,6 +72,7 @@ export function BeritaSemarang() {
           </p>
           <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
         </Card>
+        
         <Card renderImage={() => <Image width={250} height={125} src={gambar3} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
           <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
             Menteri AHY: Sertipikat Hak Milik Tanah Untuk Modal Usaha

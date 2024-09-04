@@ -1,16 +1,30 @@
 import Image from 'next/image';
 import React from 'react';
-import gambar from '@/assets/bg1.jpg';
+import { Carousel } from 'flowbite-react'; // Pastikan komponen Carousel diimpor dari flowbite-react atau library lainnya yang digunakan
+import gambar1 from "@/assets/sherlyy1a.png"; 
+import gambar2 from "@/assets/ss3.png"; 
+import gambar3 from "@/assets/kominfo6.png";
 import logo from '@/assets/kbsmg3.png';
 
 const Jumbotron = () => {
   return (
-    <div className="min-w-screen">
-      <Image
-        src={gambar}
-        alt="Background Image"
-        className="w-full h-full object-cover"
-      />
+    <div className="relative min-w-screen">
+      {/* Carousel */}
+      <div className="w-full h-screen">
+        <Carousel>
+          <div className="flex h-full items-center justify-center bg-[#B3DDF2] dark:bg-[#85B7CC] dark:text-white">
+            <Image src={gambar1} alt="Gambar 1" className="object-cover h-full w-full" />
+          </div>
+          <div className="flex h-full items-center justify-center bg-[#B3DDF2] dark:bg-[#85B7CC] dark:text-white">
+            <Image src={gambar2} alt="Gambar 2" className="object-cover h-full w-full" />
+          </div>
+          <div className="flex h-full items-center justify-center bg-[#B3DDF2] dark:bg-[#85B7CC] dark:text-white">
+            <Image src={gambar3} alt="Gambar 3" className="object-cover h-full w-full" />
+          </div>
+        </Carousel>
+      </div>
+
+      {/* Content on top of the carousel */}
       <div className="absolute inset-x-0 top-44 flex flex-col items-center justify-center text-center p-4 w-full space-y-4 md:space-y-6">
         <Image
           src={logo}
@@ -29,7 +43,6 @@ const Jumbotron = () => {
         </div>
       </div>
     </div>
-
   );
 }
 

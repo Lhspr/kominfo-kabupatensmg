@@ -1,5 +1,5 @@
 import { CarouselHomepage } from '@/components/CarouselHomepage'; 
-import { Berita } from '@/components/Berita';
+// import { Berita } from '@/components/Berita';
 import Jumbotron from '@/components/Jumbotron';
 import { CarouselDown } from '@/components/CarouselDown';
 export default function HomePage() {
@@ -7,7 +7,7 @@ export default function HomePage() {
     <div className="min-h-screen mx-auto">
       <Jumbotron/>
       <CarouselHomepage />
-      <Berita />
+      {/* <Berita /> */}
       <CarouselDown/>
     </div>
   );

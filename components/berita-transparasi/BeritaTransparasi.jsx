@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Card } from "flowbite-react";
+import Image from "next/image";
 import gambar3 from "@/assets/kominfo7.png";
 import gambar4 from "@/assets/gempa-cianjur.jpeg";
-import Image from "next/image";
 
 export function BeritaTransparasi() {
   // State untuk data card dan input pencarian
@@ -82,45 +82,104 @@ export function BeritaTransparasi() {
         />
       </div>
 
-      {/* Grid container untuk card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 pt-10 w-full max-w-screen-lg">
-        {filteredCards.length > 0 ? (
-          filteredCards.map((card) => (
-            <div key={card.id} className="flex justify-center">
-              <Card className="w-full h-full max-w-sm flex flex-col justify-between shadow-lg">
-                <div>
-                  <Image
-                    width={400}
-                    height={200}
-                    src={card.image}
-                    alt={card.title}
-                    className="object-cover w-full h-48"
-                  />
-                  <div className="p-4">
-                    <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
-                      {card.title}
-                    </h5>
-                    <p className="text-sm text-gray-700 dark:text-gray-400">
-                      {card.description}
-                    </p>
+      <div className="flex w-full max-w-screen-lg">
+        {/* Grid container untuk card */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 pt-10 w-full lg:w-3/4">
+          {filteredCards.length > 0 ? (
+            filteredCards.map((card) => (
+              <div key={card.id} className="flex justify-center">
+                <Card className="w-full h-full max-w-sm flex flex-col justify-between shadow-lg">
+                  <div>
+                    <Image
+                      width={400}
+                      height={200}
+                      src={card.image}
+                      alt={card.title}
+                      className="object-cover w-full h-48"
+                    />
+                    <div className="p-4">
+                      <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
+                        {card.title}
+                      </h5>
+                      <p className="text-sm text-gray-700 dark:text-gray-400">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
+                  <div className="p-4">
+                    <a
+                      href="#"
+                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                      Read more
+                    </a>
+                  </div>
+                </Card>
+              </div>
+            ))
+          ) : (
+            <p className="text-lg font-semibold text-gray-500 dark:text-gray-400">
+              Tidak ada hasil yang ditemukan.
+            </p>
+          )}
+        </div>
+
+        {/* Kategori Berita */}
+        <div className="w-full lg:w-1/4 lg:ml-10 mt-10 lg:mt-0">
+          <Card>
+            <h3 className="text-xl font-bold mb-4">KATEGORI BERITA</h3>
+            <ul className="list-none space-y-2">
+              <li className="flex items-center text-gray-700">
+                <span className="mr-2 text-orange-500">▶</span> Berita Semarang
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="mr-2 text-orange-500">▶</span> Berita Transisi
+              </li>
+              <li className="flex items-center text-gray-700 font">
+                <span className="mr-2 text-orange-500">▶</span> Sorotan Media
+              </li>
+            </ul>
+          </Card>
+
+          {/* Terpopuler */}
+          <Card className="mt-6">
+            <h3 className="text-xl font-bold mb-4">TERPOPULER</h3>
+            <div className="space-y-4">
+              <div className="flex flex-col">
+                <img
+                  src="/path-to-your-image.png"
+                  alt="Logo Kominfo"
+                  className="w-full h-auto"
+                />
+                <div className="p-5">
+                  <h5 className="text-lg font-bold">
+                    Siaran Pers No. 01/HM/KOMINFO/01/2024
+                  </h5>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Putus Akses Lebih dari 800 Ribu Konten, Gerak Cepat Menteri
+                    Budi Arie Berantas Judi Online.
+                  </p>
                 </div>
-                <div className="p-4">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
-                    Read more
-                  </a>
+              </div>
+              <div className="flex flex-col">
+                <img
+                  src="/path-to-another-image.png"
+                  alt="Temuan Isu Hoaks"
+                  className="w-full h-auto"
+                />
+                <div className="p-5">
+                  <h5 className="text-lg font-bold">
+                    Siaran Pers No. 02/HM/KOMINFO/01/2024
+                  </h5>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Temuan Isu Hoaks, Gerak Cepat Menangani Informasi yang
+                    Menyesatkan.
+                  </p>
                 </div>
-              </Card>
+              </div>
             </div>
-          ))
-        ) : (
-          <p className="text-lg font-semibold text-gray-500 dark:text-gray-400">
-            Tidak ada hasil yang ditemukan.
-          </p>
-        )}
+          </Card>
+        </div>
       </div>
     </div>
   );

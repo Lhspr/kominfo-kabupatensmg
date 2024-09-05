@@ -4,7 +4,6 @@ import { Carousel } from 'flowbite-react';
 import gambar1 from "@/assets/sherlyy1a.png"; 
 import gambar2 from "@/assets/ss3.png"; 
 import gambar3 from "@/assets/kominfo6.png";
-import logo from '@/assets/kbsmg3.png';
 
 const Jumbotron = () => {
   return (
@@ -34,7 +33,6 @@ const Jumbotron = () => {
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           Diskominfo Kabupaten Semarang
         </h1> */}
-       
       </div>
     </div>
   );

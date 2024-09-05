@@ -9,9 +9,9 @@ const MainLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavigationBar/>
+        <NavigationBar />
         {children}
-        <Footer1/>
+        <Footer1 />
       </body>
     </html>
   );

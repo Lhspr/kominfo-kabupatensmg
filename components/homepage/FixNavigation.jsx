@@ -44,7 +44,7 @@ const FixNavigation = () => {
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
         isActive
           ? 'bg-white shadow-md text-gray-800'
-          : 'bg-transparent text-white'
+          : 'bg-transparent text-gray-800'
       }`}
     >
       {({ open }) => (
@@ -118,7 +118,6 @@ const FixNavigation = () => {
                           )}
                         </MenuItem>
                       </MenuItems>
-
                     </Transition>
                   </Menu>
 
@@ -297,7 +296,6 @@ const FixNavigation = () => {
                 </div>
               </div>
               <div className="flex lg:hidden">
-
                 {/* Mobile menu button */}
                 <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>

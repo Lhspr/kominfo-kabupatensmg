@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Disclosure,
   DisclosureButton,
@@ -15,14 +15,38 @@ import Link from 'next/link';
 import icon from '@/assets/kominfo7.png';
 import Image from 'next/image';
 import { Navbar } from 'flowbite-react';
+import { Link as ScrollLink } from 'react-scroll';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 const FixNavigation = () => {
+  const [isActive, setIsActive] = useState(false);
+  const handleScrollToFooter = () => {
+    const footer = document.getElementById('Footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <Disclosure as="nav" className="bg-white shadow z-100">
+    <Disclosure
+      as="nav"
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        isActive
+          ? 'bg-white shadow-md text-gray-800'
+          : 'bg-transparent text-white'
+      }`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
@@ -34,14 +58,14 @@ const FixNavigation = () => {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8 justify-center items-center">
                   <Link
                     href="/"
-                    className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className="inline-flex items-center border-b-2 border-transparent  px-1 pt-1 text-sm font-medium "
                   >
                     Beranda
                   </Link>
 
                   {/* Dropdown Profil */}
                   <Menu as="div" className="relative">
-                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700">
                       Profil
                     </MenuButton>
                     <Transition
@@ -100,7 +124,7 @@ const FixNavigation = () => {
 
                   {/* Dropdown Berita */}
                   <Menu as="div" className="relative">
-                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700">
                       Berita
                     </MenuButton>
                     <Transition
@@ -145,14 +169,14 @@ const FixNavigation = () => {
 
                   <Link
                     href="/ppid"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700"
                   >
                     PPID
                   </Link>
 
                   {/* Dropdown Gallery */}
                   <Menu as="div" className="relative">
-                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium hover:border-gray-300 hover:text-gray-700">
                       Gallery
                     </MenuButton>
                     <Transition
@@ -195,16 +219,18 @@ const FixNavigation = () => {
                     </Transition>
                   </Menu>
 
-                  <Link
-                    href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  <ScrollLink
+                    to="Footer"
+                    smooth={true}
+                    duration={500}
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700"
                   >
                     Contact
-                  </Link>
+                  </ScrollLink>
 
                   {/* Dropdown Download */}
                   <Menu as="div" className="relative">
-                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    <MenuButton className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700">
                       Download
                     </MenuButton>
                     <Transition
@@ -287,7 +313,7 @@ const FixNavigation = () => {
 
           {/* Mobile menu */}
           <DisclosurePanel className="lg:hidden">
-            <div className="space-y-1 pb-3 pt-2">
+            <div className="space-y-1 pb-3 pt-2  bg-indigo-50">
               <Disclosure.Button
                 as="a"
                 href="/"
@@ -374,7 +400,8 @@ const FixNavigation = () => {
               </Disclosure>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="#Footer"
+                onClick={handleScrollToFooter}
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
               >
                 Contact

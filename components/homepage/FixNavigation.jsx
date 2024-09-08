@@ -324,6 +324,13 @@ const FixNavigation = () => {
                   Profil
                 </Disclosure.Button>
                 <DisclosurePanel className="pl-6">
+                <Disclosure.Button
+                    as="a"
+                    href="/profil-dinass"
+                    className="block py-2 text-sm text-gray-700"
+                  >
+                    Profil Dinas
+                  </Disclosure.Button>
                   <Disclosure.Button
                     as="a"
                     href="/struktur-navigasi"
@@ -337,13 +344,6 @@ const FixNavigation = () => {
                     className="block py-2 text-sm text-gray-700"
                   >
                     Visi Misi
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as="a"
-                    href="/profil-dinass"
-                    className="block py-2 text-sm text-gray-700"
-                  >
-                    Profil Dinas
                   </Disclosure.Button>
                 </DisclosurePanel>
               </Disclosure>

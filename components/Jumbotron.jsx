@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 import { Carousel } from 'flowbite-react'; 
-import gambar1 from "@/assets/sherlyy1a.png"; 
-import gambar2 from "@/assets/ss3.png"; 
-import gambar3 from "@/assets/kominfo6.png";
+import gambar1 from "@/assets/profil1.png"; 
+import gambar2 from "@/assets/profil1.png"; 
+import gambar3 from "@/assets/profil1.png";
 
 const Jumbotron = () => {
   return (

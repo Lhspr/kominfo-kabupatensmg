@@ -12,8 +12,8 @@ export function VisiMisi() {
             <Image
             src={gambar2}
             alt="Gambar Struktur Organisasi"
-            width={2000}  // Anda bisa menyesuaikan nilai ini sesuai kebutuhan
-            height={1500} // Anda bisa menyesuaikan nilai ini sesuai kebutuhan
+            width={2000} 
+            height={1500} 
             className="w-full h-auto object-cover"
             />
         </div>

@@ -1,8 +1,7 @@
 "use client";
 
 import { Card } from "flowbite-react";
-import gambar2 from "@/assets/sherlyy1a.png";
-import gambar3 from "@/assets/ahy.jpg";
+import gambar3 from "@/assets/berita1.png";
 import Image from "next/image";
 
 export function BeritaSemarang() {
@@ -24,71 +23,102 @@ export function BeritaSemarang() {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-20 gap-x-20 pt-20">
-        <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-          </p>
-          <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
-        </Card>
-        <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-          </p>
-          <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
-        </Card>
+      {/* Main grid container with 3 columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 pt-20 w-full max-w-screen-xl">
+        {/* Berita Cards */}
+        <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10">
+          {/* Set up 2 rows with 3 columns */}
+          {[...Array(6)].map((_, index) => (
+            <Card
+              key={index}
+              className="shadow-xl"
+              horizontal
+            >
+              {/* Image */}
+              <Image
+                width={400}
+                height={250}
+                src={gambar3}
+                alt="image"
+                className="w-full h-64 object-cover"
+              />
+              {/* Content */}
+              <div className="p-4">
+                <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+                <p className="text-sm font-light text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+                <a
+                  href="#"
+                  className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >
+                  Read more
+                </a>
+              </div>
+            </Card>
+          ))}
+        </div>
 
-        <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-          </p>
-          <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
-        </Card>
-        <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-          </p>
-          <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
-        </Card>
-        
-        <Card renderImage={() => <Image width={250} height={125} src={gambar2} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-          </p>
-          <a href="#" className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more</a>
-        </Card>
-        
-        <Card renderImage={() => <Image width={250} height={125} src={gambar3} alt="image 1" />} alt="Gambar 1" className="object-cover h-full w-full shadow-xl " horizontal>
-          <h5 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white">
-            Menteri AHY: Sertipikat Hak Milik Tanah Untuk Modal Usaha
-          </h5>
-          <p className="text-xs font-light text-gray-700 dark:text-gray-400">
-            Diskominfo-Pringapus: Menteri Agraria Tata Ruang / Kepala Badan Pertanahan Nasional
-          </p>
-          <a
-            href="https://main.semarangkab.go.id/menteri-ahy-sertipikat-hak-milik-tanah-untuk-modal-usaha/"
-            className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read more
-          </a>
-        </Card>
+        {/* Sidebar for Kategori Berita and Terpopuler */}
+        <div className="w-full">
+          <Card className="mb-6">
+            <h3 className="text-xl font-bold mb-4">KATEGORI BERITA</h3>
+            {/* Ubah kategori berita menjadi horizontal */}
+            <ul className="flex flex-wrap gap-4">
+              <li className="flex items-center text-gray-700">
+                <span className="mr-2 text-orange-500">▶</span> Berita Semarang
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="mr-2 text-orange-500">▶</span> Berita Transisi
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="mr-2 text-orange-500">▶</span> Sorotan Media
+              </li>
+            </ul>
+          </Card>
+
+          {/* Terpopuler */}
+          <Card>
+            <h3 className="text-xl font-bold mb-4">TERPOPULER</h3>
+            <div className="space-y-4">
+              <div className="flex flex-col">
+                <img
+                  src="/path-to-your-image.png"
+                  alt="Logo Kominfo"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-5">
+                  <h5 className="text-lg font-bold">
+                    Siaran Pers No. 01/HM/KOMINFO/01/2024
+                  </h5>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Putus Akses Lebih dari 800 Ribu Konten, Gerak Cepat Menteri
+                    Budi Arie Berantas Judi Online.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <img
+                  src="/path-to-another-image.png"
+                  alt="Temuan Isu Hoaks"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-5">
+                  <h5 className="text-lg font-bold">
+                    Siaran Pers No. 02/HM/KOMINFO/01/2024
+                  </h5>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Temuan Isu Hoaks, Gerak Cepat Menangani Informasi yang
+                    Menyesatkan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ export function Video() {
   const onPageChange = (page) => setCurrentPage(page);
 
   return (
+    
     <div className="flex flex-col items-center justify-center min-h-screen py-10 px-5">
       <h1 className="text-3xl font-bold mb-4">GALERI TERBARU</h1>
       <h2 className="text-lg mb-10">

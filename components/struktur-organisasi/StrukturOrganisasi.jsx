@@ -5,17 +5,17 @@ import gambar2 from "@/assets/struktur.jpeg";
 import Image from "next/image";
 
 export function StrukturOrganisasi() {
-  return ( 
-    <div className="flex justify-center items-center h-screen mb-32">
-      <Card className="w-full p-4">
-        {/* Div untuk teks, ditempatkan sebelum gambar */}
-        <div className="flex justify-center items-center">
-          <h1 className="text-white text-4xl font-bold bg-black bg-opacity-50 p-4 rounded">
-            Struktur Organisasi
-          </h1>
-        </div>
-
+  return (
+    <div className="flex flex-col items-center pt-20 mb-32">
+        {/* Heading di atas card */}
+        <h1 className="text-5xl font-extrabold dark:text-white mb-8 text-center">
+          Struktur Organisasi
+          <small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">
+            Kabupaten Semarang
+          </small>
+        </h1>
         {/* Gambar sebagai elemen berikutnya */}
+        <Card className="w-full p-4 items-center">
         <div>
           <Image
             width={2000}  // Lebar gambar

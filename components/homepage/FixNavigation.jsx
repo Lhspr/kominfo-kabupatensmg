@@ -80,7 +80,21 @@ const FixNavigation = () => {
                             </Link>
                           )}
                         </MenuItem>
+                        <MenuItem>
+                          {({ active }) => (
+                            <Link
+                              href="/profil-dinas"
+                              className={classNames(
+                                active ? 'bg-gray-100' : '',
+                                'block px-4 py-2 text-sm text-gray-700'
+                              )}
+                            >
+                              Profil Dinas
+                            </Link>
+                          )}
+                        </MenuItem>
                       </MenuItems>
+
                     </Transition>
                   </Menu>
 
@@ -257,6 +271,7 @@ const FixNavigation = () => {
                 </div>
               </div>
               <div className="flex lg:hidden">
+
                 {/* Mobile menu button */}
                 <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
@@ -298,6 +313,13 @@ const FixNavigation = () => {
                     className="block py-2 text-sm text-gray-700"
                   >
                     Visi Misi
+                  </Disclosure.Button>
+                  <Disclosure.Button
+                    as="a"
+                    href="/profil-dinass"
+                    className="block py-2 text-sm text-gray-700"
+                  >
+                    Profil Dinas
                   </Disclosure.Button>
                 </DisclosurePanel>
               </Disclosure>

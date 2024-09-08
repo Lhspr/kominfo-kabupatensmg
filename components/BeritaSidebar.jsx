@@ -3,9 +3,9 @@
 import { FaRegNewspaper, FaBullhorn, FaNewspaper } from 'react-icons/fa'; // Menggunakan ikon yang sesuai
 import { Card } from "flowbite-react";
 import Image from 'next/image';
-import gambar2 from "@/assets/sherlyy1a.png";
+import gambar2 from "@/assets/berita1.png";
 
-export function CarouselHomepage() {
+export function Beritasidebar(){
   return (
     <div className="flex justify-center my-20">
       {/* Main Container */}
@@ -50,7 +50,7 @@ export function CarouselHomepage() {
         <div className="w-full md:w-3/4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="max-w-sm mx-4">
-              <Image width={500} height={250} src={gambar2} alt="Gambar 1" className="object-cover h-full w-full" />
+              <Image width={500} height={250} src={gambar2} alt="Gambar 2" className="object-cover h-full w-full" />
               <div className="p-5">
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat
@@ -78,7 +78,7 @@ export function CarouselHomepage() {
               </div>
             </Card>
             <Card className="max-w-sm mx-4">
-              <Image width={500} height={250} src={gambar2} alt="Gambar 3" className="object-cover h-full w-full" />
+              <Image width={500} height={250} src={gambar2} alt="Gambar 2" className="object-cover h-full w-full" />
               <div className="p-5">
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat

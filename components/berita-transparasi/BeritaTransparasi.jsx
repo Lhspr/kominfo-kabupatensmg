@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { Card } from "flowbite-react";
 import Image from "next/image";
-import gambar3 from "@/assets/kominfo7.png";
-import gambar4 from "@/assets/gempa-cianjur.jpeg";
+import gambar4 from "@/assets/berita1.png";
 
 export function BeritaTransparasi() {
   // State untuk data card dan input pencarian
@@ -24,35 +23,35 @@ export function BeritaTransparasi() {
       title: "Ibu Kota Negara Baru: Pembangunan Nusantara Dimulai",
       description:
         "Proyek pembangunan Ibu Kota Negara (IKN) Nusantara resmi dimulai, dengan fokus pada infrastruktur dan keberlanjutan lingkungan.",
-      image: gambar3,
+      image: gambar4,
     },
     {
       id: 3,
       title: "Kenaikan BBM: Dampak Ekonomi dan Reaksi Masyarakat",
       description:
         "Kenaikan harga bahan bakar minyak (BBM) memicu berbagai reaksi dari masyarakat, termasuk unjuk rasa di beberapa daerah.",
-      image: gambar3,
+      image: gambar4,
     },
     {
       id: 4,
       title: "Pandemi COVID-19: Update Vaksinasi dan Varian Baru",
       description:
         "Pemerintah terus mempercepat program vaksinasi untuk menghadapi varian baru COVID-19 yang mulai menyebar di beberapa wilayah.",
-      image: gambar3,
+      image: gambar4,
     },
     {
       id: 5,
       title: "Judul Berita 5",
       description:
         "Deskripsi singkat untuk berita ke-5. Detail tentang topik berita ini.",
-      image: gambar3,
+      image: gambar4,
     },
     {
       id: 6,
       title: "Judul Berita 6",
       description:
         "Deskripsi singkat untuk berita ke-6. Detail tentang topik berita ini.",
-      image: gambar3,
+      image: gambar4,
     },
   ];
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useAccessibility } from '@/components/AccessibilityContext';
+import { useAccessibility } from '@/contexts/AccessibilityContext';
 
 export default function AccessibilityControls() {
   const { toggleTextSize, toggleContrast } = useAccessibility();

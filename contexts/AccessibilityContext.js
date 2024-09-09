@@ -12,16 +12,24 @@ export const AccessibilityProvider = ({ children }) => {
   const [highContrast, setHighContrast] = useState(false);
 
   const toggleTextSize = () => {
-    setTextSize(prevSize => prevSize === 'text-base' ? 'text-xl' : 'text-base');
+    console.log('Toggling text size'); // Debugging
+    setTextSize(prevSize =>
+      prevSize === 'text-base' ? 'text-xl' : 'text-base'
+    );
   };
 
   const toggleContrast = () => {
+    console.log('Toggling contrast'); // Debugging
     setHighContrast(prevContrast => !prevContrast);
   };
 
   return (
-    <AccessibilityContext.Provider value={{ textSize, highContrast, toggleTextSize, toggleContrast }}>
-      <div className={`${highContrast ? 'bg-black text-white' : ''} ${textSize}`}>
+    <AccessibilityContext.Provider
+      value={{ textSize, highContrast, toggleTextSize, toggleContrast }}
+    >
+      <div
+        className={`${highContrast ? 'bg-black text-white' : ''} ${textSize}`}
+      >
         {children}
       </div>
     </AccessibilityContext.Provider>

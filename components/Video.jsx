@@ -1,17 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import { Card, Pagination } from 'flowbite-react';
-
 export function Video() {
-  // State for managing pagination
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const onPageChange = (page) => {
-    setCurrentPage(page);
-    // You can load the new videos based on the `page` parameter here
-  };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-10 px-5">
       <h1 className="text-3xl font-bold mb-4">Video</h1>
@@ -25,8 +14,8 @@ export function Video() {
           {/* Video Embeds */}
           {[
             {
-              id: "0znJaNCqJKU", // Your provided video ID
-              title: "DISKOMINFO Ungaran - Andakara Kerta Raharja 'Peringatan ke-12 UUK DIY'",
+              id: "video_id_1",
+              title: "DISKOMINFO Ungaran - Andakara Kerta Raharja 'Peringatan ke-12'",
             },
             {
               id: "video_id_2",
@@ -37,24 +26,24 @@ export function Video() {
               title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
             },
             {
-              id: "video_id_3",
+              id: "video_id_4",
               title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
             },
             {
-              id: "video_id_3",
+              id: "video_id_5",
               title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
             },
             {
-              id: "video_id_3",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
+                id: "video_id_5",
+                title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
+              },
           ].map((video, index) => (
             <div key={index} className="flex justify-center">
               <div className="w-full max-w-md">
                 <iframe
                   width="100%"
                   height="auto"
-                  src={`https://www.youtube.com/embed/${video.id}`}
+                  src={`https://www.youtube.com/embed/0znJaNCqJKU`}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -66,14 +55,6 @@ export function Video() {
           ))}
         </div>
       </div>
-
-      {/* Pagination */}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={10}  // total pages
-        onPageChange={onPageChange}
-        className="mt-6"
-      />
     </div>
   );
 }

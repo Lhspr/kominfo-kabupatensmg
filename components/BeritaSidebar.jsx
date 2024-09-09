@@ -29,32 +29,32 @@ export function Beritasidebar() {
                   <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                   <div>
                     <div className="text-gray-900 dark:text-white font-bold">
-                      MEDIA
+                      GALLERY
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Berita Media Terbaru
+                      Foto terbaru
                     </div>
                   </div>
                 </li>
                 <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
-                  <FaBullhorn className="text-[#007bff] mr-3" size={24} />
+                  <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                   <div>
                     <div className="text-gray-900 dark:text-white font-bold">
-                      BERITA
+                      VIDEO
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Berita Terbaru
+                      Video terbaru
                     </div>
                   </div>
                 </li>
                 <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
-                  <FaBullhorn className="text-[#007bff] mr-3" size={24} />
+                  <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                   <div>
                     <div className="text-gray-900 dark:text-white font-bold">
-                      PENGUMUMAN
+                      REGULASI
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Pengumuman Terbaru
+                      Regulasi Terbaru
                     </div>
                   </div>
                 </li>
@@ -83,7 +83,7 @@ export function Beritasidebar() {
                       Cianjur, menyebabkan kerusakan parah pada ratusan rumah
                       dan fasilitas umum.
                     </p>
-                    <a href="#" className="text-blue-600 hover:underline">
+                    <a href="#berita-terbaru" className="text-blue-600 hover:underline">
                       Read more
                     </a>
                   </div>

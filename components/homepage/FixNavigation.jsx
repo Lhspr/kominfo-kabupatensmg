@@ -258,7 +258,7 @@ const FixNavigation = () => {
                         <MenuItem>
                           {({ active }) => (
                             <Link
-                              href="/dwnld-materi"
+                              href="/Downld-Materi"
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm text-gray-700'
@@ -418,7 +418,7 @@ const FixNavigation = () => {
                   </Disclosure.Button>
                   <Disclosure.Button
                     as="a"
-                    href="/dwnld-materi"
+                    href="/Downld-Materi"
                     className="block py-2 text-sm text-gray-700"
                   >
                     Materi

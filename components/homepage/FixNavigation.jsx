@@ -42,8 +42,8 @@ const FixNavigation = () => {
     <Disclosure
       as="nav"
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${isActive
-          ? 'bg-white shadow-md text-gray-800'
-          : 'bg-transparent text-gray-800'
+        ? 'bg-blue-900 shadow-md text-slate-100'
+        : 'bg-transparent text-gray-800'
         }`}
     >
       {({ open }) => (
@@ -80,6 +80,19 @@ const FixNavigation = () => {
                         <MenuItem>
                           {({ active }) => (
                             <Link
+                              href="/profil-dinas"
+                              className={classNames(
+                                active ? 'bg-gray-100' : '',
+                                'block px-4 py-2 text-sm text-gray-700'
+                              )}
+                            >
+                              Profil Dinas
+                            </Link>
+                          )}
+                        </MenuItem>
+                        <MenuItem>
+                          {({ active }) => (
+                            <Link
                               href="/struktur-organisasi"
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
@@ -103,19 +116,7 @@ const FixNavigation = () => {
                             </Link>
                           )}
                         </MenuItem>
-                        <MenuItem>
-                          {({ active }) => (
-                            <Link
-                              href="/profil-dinas"
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
-                              )}
-                            >
-                              Profil Dinas
-                            </Link>
-                          )}
-                        </MenuItem>
+
                       </MenuItems>
                     </Transition>
                   </Menu>
@@ -325,7 +326,7 @@ const FixNavigation = () => {
                 <DisclosurePanel className="pl-6">
                   <Disclosure.Button
                     as="a"
-                    href="/profil-dinass"
+                    href="/profil-dinas"
                     className="block py-2 text-sm text-gray-700"
                   >
                     Profil Dinas

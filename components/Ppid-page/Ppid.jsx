@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Home() {
+export default function Ppid() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Section 1: Layanan PPID */}
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-8">PPID</h1>
           <p className="mb-6 text-gray-700">
-            PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi, 
+            PPID adalah kepanjangan dari Pejabat Pengelola Informasi dan Dokumentasi,
             di mana PPID berfungsi sebagai pengelola dan penyampai dokumen yang dimiliki oleh badan publik.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

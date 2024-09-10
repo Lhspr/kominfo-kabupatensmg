@@ -13,7 +13,7 @@ export function Video() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10 px-5">
+    <div className="flex flex-col items-center justify-center min-h-screen py-40 px-5">
       <h1 className="text-3xl font-bold mb-4">Video</h1>
       <h2 className="text-lg mb-10">
         Video terbaru DISKOMINFO Kabupaten Semarang

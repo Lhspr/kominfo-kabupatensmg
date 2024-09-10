@@ -25,18 +25,6 @@ export function Video() {
               id: "video_id_3",
               title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
             },
-            {
-              id: "video_id_4",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-              id: "video_id_5",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-                id: "video_id_5",
-                title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-              },
           ].map((video, index) => (
             <div key={index} className="flex justify-center">
               <div className="w-full max-w-md">

@@ -21,7 +21,7 @@ export function Beritasidebar() {
                       TERBARU
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Rangkuman Berita
+                      Rangkuman 
                     </div>
                   </div>
                 </li>
@@ -29,10 +29,21 @@ export function Beritasidebar() {
                   <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                   <div>
                     <div className="text-gray-900 dark:text-white font-bold">
-                      GALLERY
+                      BERITA
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Foto terbaru
+                      kumpulan berita
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
+                  <FaNewspaper className="text-[#007bff] mr-3" size={24} />
+                  <div>
+                    <div className="text-gray-900 dark:text-white font-bold">
+                      FOTO
+                    </div>
+                    <div className="text-gray-500 dark:text-gray-400 text-sm">
+                      Kumpulan Foto
                     </div>
                   </div>
                 </li>
@@ -43,18 +54,7 @@ export function Beritasidebar() {
                       VIDEO
                     </div>
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Video terbaru
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
-                  <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                  <div>
-                    <div className="text-gray-900 dark:text-white font-bold">
-                      REGULASI
-                    </div>
-                    <div className="text-gray-500 dark:text-gray-400 text-sm">
-                      Regulasi Terbaru
+                      Kumpulan Video
                     </div>
                   </div>
                 </li>

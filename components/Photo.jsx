@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export function Foto() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10 px-5">
+    <div className="flex flex-col items-center justify-center min-h-screen py-5 px-2.5 bg-[#270b60] text-white">
       {/* Judul Galeri */}
       <h1 className="text-3xl font-bold mb-4">GALERI TERBARU</h1>
       <h2 className="text-lg mb-10">
@@ -15,14 +15,17 @@ export function Foto() {
 
       {/* Grid untuk Galeri Foto */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-lg">
-        {Array.from({ length: 9 }).map((_, index) => (
-          <Card key={index} className="shadow-md rounded-lg overflow-hidden">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <div key={index} className="overflow-hidden">
             <Image
               src={gambar2}
               alt={`Foto ${index + 1}`}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
+              layout="responsive"
+              width={300}
+              height={200}
             />
-          </Card>
+          </div>
         ))}
       </div>
     </div>

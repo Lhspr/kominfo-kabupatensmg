@@ -7,7 +7,6 @@ import {
   BsFacebook,
   BsYoutube,
   BsInstagram,
-
 } from 'react-icons/bs';
 import logo from '@/assets/kbsmg3-crop.png';
 import Image from 'next/image';
@@ -19,7 +18,7 @@ export function Footer1() {
   return (
     <Footer
       container
-      className="bg-[#007bff] text-white overflow-hidden"
+      className="bg-[#270b60] text-white overflow-hidden"
       id="Footer"
     >
       <div className="w-full">
@@ -32,7 +31,7 @@ export function Footer1() {
                 <Image
                   src={logo}
                   alt="Kominfo Logo"
-                  className="w-40 h-full object-contain"
+                  className="h-auto max-h-20 object-contain" // Mengatur ukuran logo
                 />
                 <div className="">
                   <span className="text-white text-lg font-bold">

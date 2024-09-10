@@ -41,11 +41,10 @@ const FixNavigation = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
-        isActive
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${isActive
           ? 'bg-white shadow-md text-gray-800'
           : 'bg-transparent text-gray-800'
-      }`}
+        }`}
     >
       {({ open }) => (
         <>
@@ -167,7 +166,7 @@ const FixNavigation = () => {
                   </Menu>
 
                   <Link
-                    href="/ppid"
+                    href="/ppid-kab"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium  hover:border-gray-300 hover:text-gray-700"
                   >
                     PPID
@@ -324,7 +323,7 @@ const FixNavigation = () => {
                   Profil
                 </Disclosure.Button>
                 <DisclosurePanel className="pl-6">
-                <Disclosure.Button
+                  <Disclosure.Button
                     as="a"
                     href="/profil-dinass"
                     className="block py-2 text-sm text-gray-700"
@@ -370,7 +369,7 @@ const FixNavigation = () => {
               </Disclosure>
               <Disclosure.Button
                 as="a"
-                href="/ppid"
+                href="/ppid-kab"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
               >
                 PPID

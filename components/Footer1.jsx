@@ -18,7 +18,7 @@ export function Footer1() {
   return (
     <Footer
       container
-      className="bg-[#270b60] text-white overflow-hidden"
+      className="bg-[#110b60] text-white overflow-hidden"
       id="Footer"
     >
       <div className="w-full">

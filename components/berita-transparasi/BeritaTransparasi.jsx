@@ -63,7 +63,7 @@ export function BeritaTransparasi() {
   return (
     <div className="flex flex-col items-center pt-20 mb-32 px-4 sm:px-6 lg:px-8">
       {/* Heading di atas card */}
-      <h1 className="text-5xl font-extrabold dark:text-white mb-8">
+      <h1 className="text-5xl font-extrabold dark:text-white mb-8 text-center">
         Berita
         <small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">
           Transparasi
@@ -83,38 +83,37 @@ export function BeritaTransparasi() {
 
       <div className="flex w-full max-w-screen-lg flex-col lg:flex-row">
         {/* Grid container untuk card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9  w-full lg:w-3/4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full lg:w-3/4">
           {filteredCards.length > 0 ? (
             filteredCards.map(card => (
-              <div key={card.id} className="flex justify-center">
-                <Card className="w-full h-full max-w-sm flex flex-col justify-between shadow-lg">
-                  <div>
-                    <Image
-                      width={400}
-                      height={200}
-                      src={card.image}
-                      alt={card.title}
-                      className="object-cover w-full h-48"
-                    />
-                    <div className="p-4">
-                      <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
-                        {card.title}
-                      </h5>
-                      <p className="text-sm text-gray-700 dark:text-gray-400">
-                        {card.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <a
-                      href="#"
-                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                      Read more
-                    </a>
-                  </div>
-                </Card>
-              </div>
+              <Card
+                key={card.id}
+                className="flex flex-col justify-between h-full shadow-lg"
+              >
+                {/* Image */}
+                <Image
+                  width={400}
+                  height={200}
+                  src={card.image}
+                  alt={card.title}
+                  className="object-cover w-full h-48"
+                />
+                {/* Content */}
+                <div className="p-4 flex-grow flex flex-col justify-between">
+                  <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
+                    {card.title}
+                  </h5>
+                  <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
+                    {card.description}
+                  </p>
+                  <a
+                    href="#"
+                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline mt-auto"
+                  >
+                    Read more
+                  </a>
+                </div>
+              </Card>
             ))
           ) : (
             <p className="text-lg font-semibold text-gray-500 dark:text-gray-400">
@@ -134,7 +133,7 @@ export function BeritaTransparasi() {
               <li className="flex items-center text-gray-700">
                 <span className="mr-2 text-orange-500">▶</span> Berita Transisi
               </li>
-              <li className="flex items-center text-gray-700 font">
+              <li className="flex items-center text-gray-700">
                 <span className="mr-2 text-orange-500">▶</span> Sorotan Media
               </li>
             </ul>

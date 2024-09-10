@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { Card, Pagination } from 'flowbite-react';
-import gambar2 from '@/assets/sherlyy1a.png';
+import gambar2 from '@/assets/kegiatan1.jpeg';
+import gambar3 from '@/assets/kegiatan2.jpeg';
 import Image from 'next/image';
 
 export function Foto() {
@@ -12,11 +13,15 @@ export function Foto() {
 
   const onPageChange = (page) => {
     setCurrentPage(page);
-    // memuat foto baru berdasarkan parameter `page`
   };
 
-  // Contoh array
-  const allPhotos = Array.from({ length: 27 }); //total foto
+  // Array semua foto yang ingin ditampilkan
+  const allPhotos = [
+    gambar2, gambar3, gambar2, gambar3, gambar2, gambar3, gambar2, gambar3, gambar2,
+    gambar3, gambar2, gambar3, gambar2, gambar3, gambar2, gambar3, gambar2, gambar3,
+    gambar2, gambar3, gambar2, gambar3, gambar2, gambar3, gambar2, gambar3, gambar2,
+  ]; // Total ada 27 foto
+
   const totalPages = Math.ceil(allPhotos.length / photosPerPage);
 
   // Menentukan foto yang akan ditampilkan di halaman saat ini
@@ -39,12 +44,12 @@ export function Foto() {
           <div className="flex flex-col items-center justify-center w-full lg:w-3/4">
             {/* Grid Galeri */}
             <div className="grid grid-cols-3 gap-9">
-              {currentPhotos.map((_, index) => (
+              {currentPhotos.map((photo, index) => (
                 <div key={index} className="flex justify-center">
                   <Card className="w-full max-w-xs">
                     <Image
-                      src={gambar2}
-                      alt="Kegiatan Diskominfo"
+                      src={photo}
+                      alt={`Kegiatan Diskominfo ${index + 1}`}
                       className="w-full h-auto"
                     />
                   </Card>

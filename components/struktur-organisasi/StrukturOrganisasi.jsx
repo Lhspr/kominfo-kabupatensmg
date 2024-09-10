@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "flowbite-react";
-import gambar2 from "@/assets/struktur.jpeg";
+import gambar2 from "@/assets/struktur.jpg";
 import Image from "next/image";
 
 export function StrukturOrganisasi() {

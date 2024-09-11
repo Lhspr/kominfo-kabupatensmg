@@ -31,7 +31,7 @@ export function Foto() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-5 px-2.5 bg-[#270b60] text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen py-5 px-2.5 bg-[#270b60] text-white" id='foto-homepage'>
       {/* Judul Galeri */}
       <h1 className="text-3xl font-bold mb-4">GALERI TERBARU</h1>
       <h2 className="text-lg mb-10">

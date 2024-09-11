@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Calendar from 'react-calendar'; // Import kalender dari react-calendar
 import 'react-calendar/dist/Calendar.css'; // Impor CSS kalender agar tampilannya bagus
 import gambar2 from '@/assets/berita1.png';
+import Link from 'next/link';
 
 export function Beritasidebar() {
   return (
@@ -30,36 +31,36 @@ export function Beritasidebar() {
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <div>
+                <Link href={"/berita-semarang"}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     BERITA
                   </div>
                   <div className="text-gray-500 dark:text-gray-400 text-sm">
                     kumpulan berita
                   </div>
-                </div>
+                </Link>
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <div>
+                <Link href={"/Gallery-foto"}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     FOTO
                   </div>
                   <div className="text-gray-500 dark:text-gray-400 text-sm">
                     Kumpulan Foto
                   </div>
-                </div>
+                </Link>
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <div>
+                <Link href={"/Gallery-video"}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     VIDEO
                   </div>
                   <div className="text-gray-500 dark:text-gray-400 text-sm">
                     Kumpulan Video
                   </div>
-                </div>
+                </Link>
               </li>
             </ul>
 

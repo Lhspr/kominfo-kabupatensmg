@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "flowbite-react";
-import gambar2 from "@/assets/Profil1.png";
+import gambar2 from "@/assets/profil1.png";
 import Image from "next/image";
 
 export function ProfilDinas() {

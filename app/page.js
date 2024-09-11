@@ -1,4 +1,4 @@
-import { Beritasidebar } from '@/components/beritasidebar'; 
+import { Beritasidebar } from '@/components/BeritaSidebar'; 
 import Jumbotron from '@/components/Jumbotron';
 import { CarouselDown } from '@/components/CarouselDown';
 import { Foto } from '@/components/Photo';

@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
 import { Carousel } from 'flowbite-react'; 
-import gambar1 from "@/assets/profil1.png"; 
-import gambar2 from "@/assets/profil1.png"; 
-import gambar3 from "@/assets/profil1.png";
+import gambar1 from "@/assets/bg2.jpg"; 
+import gambar2 from "@/assets/bg2.jpg"; 
+import gambar3 from "@/assets/bg2.jpg";
 
 const Jumbotron = () => {
   return (
@@ -23,16 +23,14 @@ const Jumbotron = () => {
         </Carousel>
       </div>
 
-      {/* Content on top of the carousel */}
-      <div className="absolute inset-x-0 top-44 flex flex-col items-center justify-center text-center p-4 w-full space-y-4 md:space-y-6">
-        {/* <Image
-          src={logo}
-          alt="Logo Diskominfo"
-          className="w-32 h-auto mb-0 md:w-48 lg:w-64"
-        />
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Diskominfo Kabupaten Semarang
-        </h1> */}
+      {/* Content on top of the carousel with animation */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 w-full space-y-4 md:space-y-6 fadeInUp">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+          DINAS KOMUNIKASI DAN INFORMATIKA
+        </h1>
+        <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-4">
+          KABUPATEN SEMARANG
+        </h2>
       </div>
     </div>
   );

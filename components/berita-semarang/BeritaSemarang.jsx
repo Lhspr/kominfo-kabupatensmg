@@ -1,32 +1,30 @@
 'use client';
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Card } from 'flowbite-react';
+import Image from 'next/image';
+import { fetchNewsDatas } from '@/services/news_services';
 
 export function BeritaSemarang() {
-  const [news,setNews] = useState([])
+  const [news, setNews] = useState([]);
 
-  const getData = async () => {
-    axios
-      .get("http://127.0.0.1:8000/api/v1/news", {
-        headers: {
-          Accept: "application/json",
-        },
-      })
-      .then((response) => {
-        const data = response.data.data;
-        console.log(data);
-        setNews(data);
-      })
-      .catch((error) => {
-        alert(`Failed to get data news to server [${error}]`);
-      });
+  // fetching data menggunakan services function
+  const fetchData = async () => {
+    try {
+      const data = await fetchNewsDatas('news');
+      if (data) {
+        setNews(data); // Simpan data video ke state
+      }
+    } catch (error) {
+      console.error('Error Fetching data News', error);
+    }
   };
 
   useEffect(() => {
-    getData();
+    fetchData();
   }, [0]);
+
   return (
     <div className="flex flex-col items-center pt-20 mb-32">
       {/* Heading di atas card */}
@@ -39,7 +37,7 @@ export function BeritaSemarang() {
 
       {/* Main grid container with 3 columns */}
       <div className="flex flex-col items-center justify-center w-full max-w-screen-lg">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 w-full max-w-screen-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 w-full max-w-screen-lg">
           {/* Berita Cards */}
           {news.map((item, index) => (
             <Card
@@ -47,8 +45,8 @@ export function BeritaSemarang() {
               className="shadow-xl flex flex-col items-center justify-center"
             >
               {/* Image */}
-              <img
-                width={400}
+              <Image
+                width={250}
                 height={250}
                 src={item.image}
                 alt="image"
@@ -59,7 +57,7 @@ export function BeritaSemarang() {
                 <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
                   {item.title}
                 </h5>
-                <p className="text-sm font-light text-gray-700 dark:text-gray-400 mb-4">
+                <p className="text-sm font-light text-gray-700 dark:text-gray-400 mb-2">
                   {item.description}
                 </p>
                 <a

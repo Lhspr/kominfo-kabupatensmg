@@ -6,6 +6,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'tailwindui.com',
             },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+            },
         ]
     }
 };

@@ -1,16 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, Pagination } from 'flowbite-react';
+import { fetchVideoDatas } from '@/services/video_services';
 
 export function Video() {
-  // State for managing pagination
+  // State untuk mengelola pagination dan data video
   const [currentPage, setCurrentPage] = useState(1);
+  const [videos, setVideos] = useState([]); // Tambahkan state untuk menyimpan video
 
-  const onPageChange = (page) => {
+  const onPageChange = page => {
     setCurrentPage(page);
-    // You can load the new videos based on the `page` parameter here
+    // Anda dapat memuat video baru berdasarkan parameter `page` di sini
   };
+
+  // fetching data menggunakan services function
+  const fetchData = async () => {
+    try {
+      const data = await fetchVideoDatas('videos');
+      if (data) {
+        setVideos(data); // Simpan data video ke state
+      }
+    } catch (error) {
+      console.error('Error Fetching data Photos', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [0]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-40 px-5">
@@ -23,54 +41,34 @@ export function Video() {
       <div className="flex w-full max-w-screen-lg flex-col lg:flex-row">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {/* Video Embeds */}
-          {[
-            {
-              id: "0znJaNCqJKU", // Your provided video ID
-              title: "DISKOMINFO Ungaran - Andakara Kerta Raharja 'Peringatan ke-12 UUK DIY'",
-            },
-            {
-              id: "video_id_2",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-              id: "video_id_3",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-              id: "video_id_3",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-              id: "video_id_3",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-            {
-              id: "video_id_3",
-              title: "DISKOMINFO Kabupaten Semarang - Upacara Peringatan HUT ke-79 RI Dinas Komunikasi dan Informatika",
-            },
-          ].map((video, index) => (
-            <div key={index} className="flex justify-center">
-              <div className="w-full max-w-md">
-                <iframe
-                  width="100%"
-                  height="auto"
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                <p className="mt-2 text-center">{video.title}</p>
+          {videos.map(
+            (
+              video,
+              index // Gunakan state videos untuk merender video
+            ) => (
+              <div key={index} className="flex justify-center">
+                <div className="w-full max-w-md">
+                  <iframe
+                    width="100%"
+                    height="auto"
+                    src={`https://www.youtube.com/embed/${video.id}`} // Pastikan video.id ada dalam data
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <p className="mt-2 text-center">{video.title}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
 
       {/* Pagination */}
       <Pagination
         currentPage={currentPage}
-        totalPages={10}  // total pages
+        totalPages={10} // total pages
         onPageChange={onPageChange}
         className="mt-6"
       />

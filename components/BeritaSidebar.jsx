@@ -7,8 +7,28 @@ import Calendar from 'react-calendar'; // Import kalender dari react-calendar
 import 'react-calendar/dist/Calendar.css'; // Impor CSS kalender agar tampilannya bagus
 import gambar2 from '@/assets/berita1.png';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { fetchNewsDatas } from '@/services/news_services';
 
 export function Beritasidebar() {
+  const [news, setNews] = useState([]);
+
+  // fetching data menggunakan services function
+  const fetchData = async () => {
+    try {
+      const data = await fetchNewsDatas('news');
+      if (data) {
+        setNews(data.slice(0, 3)); // Simpan hanya 3 berita terbaru ke state
+      }
+    } catch (error) {
+      console.error('Error Fetching data News', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [0]);
+
   return (
     <div className="flex justify-center my-20">
       {/* Main Container */}
@@ -31,7 +51,7 @@ export function Beritasidebar() {
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <Link href={"/berita-semarang"}>
+                <Link href={'/berita-semarang'}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     BERITA
                   </div>
@@ -42,7 +62,7 @@ export function Beritasidebar() {
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <Link href={"/Gallery-foto"}>
+                <Link href={'/Gallery-foto'}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     FOTO
                   </div>
@@ -53,7 +73,7 @@ export function Beritasidebar() {
               </li>
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
-                <Link href={"/Gallery-video"}>
+                <Link href={'/Gallery-video'}>
                   <div className="text-gray-900 dark:text-white font-bold">
                     VIDEO
                   </div>
@@ -74,30 +94,36 @@ export function Beritasidebar() {
         {/* Berita */}
         <div className="w-full md:w-3/4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[...Array(3)].map((_, index) => (
-              <Card className="max-w-sm mx-4" key={index}>
-                <Image
-                  width={500}
-                  height={250}
-                  src={gambar2}
-                  alt={`Gambar ${index + 1}`}
-                  className="object-cover h-full w-full"
-                />
-                <div className="p-5">
-                  <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    Gempa bumi dengan kekuatan 5,6 SR mengguncang wilayah
-                    Cianjur, menyebabkan kerusakan parah pada ratusan rumah
-                    dan fasilitas umum.
-                  </p>
-                  <a href="#berita-terbaru" className="text-blue-600 hover:underline">
-                    Read more
-                  </a>
-                </div>
-              </Card>
-            ))}
+            {news.map(
+              (
+                item,
+                index // Tampilkan berita terbaru
+              ) => (
+                <Card className="max-w-sm mx-4" key={index}>
+                  <Image
+                    width={500}
+                    height={250}
+                    src={item.image || gambar2} // Ganti dengan gambar dari item
+                    alt={`Gambar ${index + 1}`}
+                    className="object-cover h-full w-full"
+                  />
+                  <div className="p-5">
+                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {item.title}
+                    </h5>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                      {item.description}
+                    </p>
+                    <a
+                      href={item.link} // Ganti dengan link dari item
+                      className="text-blue-600 hover:underline"
+                    >
+                      Read more
+                    </a>
+                  </div>
+                </Card>
+              )
+            )}
           </div>
         </div>
       </div>

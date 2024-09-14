@@ -6,6 +6,7 @@ import { Card, Pagination } from 'flowbite-react';
 import gambar2 from '@/assets/kegiatan1.jpeg';
 import gambar3 from '@/assets/kegiatan2.jpeg';
 import Image from 'next/image';
+import { fetchPhotoDatas } from '@/services/photo_services';
 
 export function Foto() {
   // State untuk mengelola pagination
@@ -13,26 +14,21 @@ export function Foto() {
   const [photos, setPhotos] = useState([])
   const photosPerPage = 9; // Jumlah foto per halaman
 
-
-  const getdatafoto = async () => {
-    axios
-      .get("http://127.0.0.1:8000/api/v1/photos", {
-        headers: {
-          Accept: "application/json",
-        },
-      })
-      .then((response) => {
-        const data = response.data.data;
-        setPhotos(data);
-      })
-      .catch((error) => {
-        alert(`Failed to get data photo to server [${error}]`)
-      });
+  // fetching data menggunakan services function
+  const fetchData = async () => {
+    try {
+      const data = await fetchPhotoDatas('photos')
+      if (data) {
+        setPhotos(data)
+      }
+    } catch (error) {
+      console.error("Error Fetching data Photos", error)
+    }
   }
 
-    const onPageChange = (page) => {
-      setCurrentPage(page);
-    };
+  const onPageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   const totalPages = Math.ceil(photos.length / photosPerPage);
 
@@ -43,8 +39,8 @@ export function Foto() {
   );
 
   useEffect(() => {
-    getdatafoto()
-  },[0]);
+    fetchData()
+  }, [0]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-40 px-5">
@@ -61,17 +57,19 @@ export function Foto() {
           <div className="flex flex-col items-center justify-center w-full lg:w-3/4">
             {/* Grid Galeri */}
             <div className="grid grid-cols-3 gap-9">
-                {photos.map((item, index) => (
+              {photos.map((item, index) => (
                 <div key={index} className="flex justify-center">
                   <Card className="w-full max-w-xs">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={item.file_path}
                       alt={`Kegiatan Diskominfo ${index + 1}`}
                       className="w-full h-auto"
                     />
-                  </Card> 
-                 </div>
-              ))} 
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
         </div>

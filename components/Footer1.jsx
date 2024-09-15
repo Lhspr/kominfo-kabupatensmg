@@ -1,5 +1,6 @@
 'use client';
 
+// Mengimpor modul yang diperlukan
 import dynamic from 'next/dynamic';
 import { Footer } from 'flowbite-react';
 import {
@@ -11,9 +12,10 @@ import {
 import logo from '@/assets/kbsmg3-crop.png';
 import Image from 'next/image';
 
-// Import komponen MapComponent secara dinamis
+// Mengimpor komponen MapComponent secara dinamis
 const MapComponent = dynamic(() => import('./MapComponent'), { ssr: false });
 
+// Fungsi Footer1 untuk menampilkan footer halaman
 export function Footer1() {
   return (
     <Footer
@@ -22,7 +24,7 @@ export function Footer1() {
       id="Footer"
     >
       <div className="w-full">
-        {/* OpenStreetMap with Leaflet.js */}
+        {/* Menampilkan peta menggunakan OpenStreetMap dengan Leaflet.js */}
         <MapComponent />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">

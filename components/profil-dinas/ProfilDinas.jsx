@@ -1,9 +1,11 @@
 "use client";
 
+// Mengimpor komponen yang diperlukan dari library dan aset
 import { Card } from "flowbite-react";
 import gambar2 from "@/assets/profil1.png";
 import Image from "next/image";
 
+// Fungsi untuk menampilkan profil Dinas
 export function ProfilDinas() {
   return (
     <div className="flex flex-col items-center pt-20 mb-32 px-4">

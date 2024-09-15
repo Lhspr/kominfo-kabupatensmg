@@ -1,9 +1,12 @@
-import { BeritaSemarang } from "@/components/berita-semarang/BeritaSemarang";
+// Mengimpor komponen BeritaSemarang dari direktori yang sesuai
+import { BeritaSemarang } from '@/components/berita-semarang/BeritaSemarang';
 
+// Fungsi utama untuk halaman Berita Semarang
 export default function BeritaSemarangPage() {
   return (
     <div className="container mx-auto">
-      <BeritaSemarang/>
+      {/* Menampilkan komponen BeritaSemarang */}
+      <BeritaSemarang />
     </div>
   );
 }

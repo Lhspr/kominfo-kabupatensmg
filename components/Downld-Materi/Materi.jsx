@@ -1,28 +1,32 @@
 "use client";
 
+// Mengimpor komponen dari library flowbite-react
 import { Tables } from "flowbite-react";
 
+// Komponen utama Materi
 export const Materi = () => {
   return (
     <div className="flex flex-col items-center pt-20 mb-32">
-      {/* Heading di atas card */}
+      {/* Judul halaman */}
       <h1 className="text-5xl font-extrabold dark:text-white mb-8">
         Materi
       </h1>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg pt-10 pb-20">
-        {/* Menggunakan padding-top untuk memberi ruang bagi navbar dan padding-bottom untuk memberi jarak ke footer */}
+        {/* Tabel untuk menampilkan daftar materi */}
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border border-gray-300 divide-y divide-gray-300 dark:divide-gray-700 dark:border-gray-700">
-  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-    <tr className="divide-x divide-gray-300 dark:divide-gray-700">
-      <th scope="col" className="px-6 py-3 font-extrabold text-center">No</th>
-      <th scope="col" className="px-6 py-3 font-extrabold text-center">Nommor Peraturan</th>
-      <th scope="col" className="px-6 py-3 text-center">Tentang</th>
-      <th scope="col" className="px-6 py-3 text-center">Tanggal Penetapan</th>
-      <th scope="col" className="px-6 py-3 text-center">Status</th>
-      <th scope="col" className="px-6 py-3 text-center">Unduhan</th>
-    </tr>
-  </thead>
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr className="divide-x divide-gray-300 dark:divide-gray-700">
+              {/* Kolom tabel */}
+              <th scope="col" className="px-6 py-3 font-extrabold text-center">No</th>
+              <th scope="col" className="px-6 py-3 font-extrabold text-center">Nomor Peraturan</th>
+              <th scope="col" className="px-6 py-3 text-center">Tentang</th>
+              <th scope="col" className="px-6 py-3 text-center">Tanggal Penetapan</th>
+              <th scope="col" className="px-6 py-3 text-center">Status</th>
+              <th scope="col" className="px-6 py-3 text-center">Unduhan</th>
+            </tr>
+          </thead>
           <tbody className="divide-y divide-gray-300 dark:divide-gray-700">
+            {/* Baris data materi */}
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 divide-x divide-gray-300 dark:divide-gray-700">
               <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 1
@@ -198,4 +202,5 @@ export const Materi = () => {
   );
 };
 
+// Ekspor komponen Materi
 export default Materi;

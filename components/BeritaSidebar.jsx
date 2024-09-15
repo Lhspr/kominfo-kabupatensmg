@@ -11,33 +11,35 @@ import { useEffect, useState } from 'react';
 import { fetchNewsDatas } from '@/services/news_services';
 
 export function Beritasidebar() {
+  // State untuk menyimpan data berita
   const [news, setNews] = useState([]);
 
-  // fetching data menggunakan services function
+  // Fungsi untuk mengambil data berita dari service
   const fetchData = async () => {
     try {
-      const data = await fetchNewsDatas('news');
+      const data = await fetchNewsDatas('news'); // Mengambil data berita
       if (data) {
         setNews(data.slice(0, 3)); // Simpan hanya 3 berita terbaru ke state
       }
     } catch (error) {
-      console.error('Error Fetching data News', error);
+      console.error('Error Fetching data News', error); // Menangani error saat mengambil data
     }
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(); // Memanggil fungsi fetchData saat komponen pertama kali dimuat
   }, [0]);
 
   return (
     <div className="flex justify-center my-20">
-      {/* Main Container */}
+      {/* Kontainer utama */}
       <div className="flex flex-wrap w-full max-w-screen-xl">
         {/* Sidebar */}
         <div className="w-full md:w-1/4 mb-6 md:mb-0">
           <div className="bg-white shadow-md rounded-lg p-4 h-full flex flex-col">
             {/* Menu Sidebar */}
             <ul className="space-y-2 mb-4">
+              {/* Item menu untuk berita terbaru */}
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaRegNewspaper className="text-[#007bff] mr-3" size={24} />
                 <div>
@@ -49,6 +51,7 @@ export function Beritasidebar() {
                   </div>
                 </div>
               </li>
+              {/* Item menu untuk kumpulan berita */}
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                 <Link href={'/berita-semarang'}>
@@ -60,6 +63,7 @@ export function Beritasidebar() {
                   </div>
                 </Link>
               </li>
+              {/* Item menu untuk kumpulan foto */}
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                 <Link href={'/Gallery-foto'}>
@@ -71,6 +75,7 @@ export function Beritasidebar() {
                   </div>
                 </Link>
               </li>
+              {/* Item menu untuk kumpulan video */}
               <li className="flex items-center p-4 rounded-lg bg-white hover:bg-[#007bff] transition dark:bg-[#f0f0f0] dark:hover:bg-[#007bff]">
                 <FaNewspaper className="text-[#007bff] mr-3" size={24} />
                 <Link href={'/Gallery-video'}>
@@ -86,7 +91,7 @@ export function Beritasidebar() {
 
             {/* Kalender */}
             <div className="mt-4 flex-grow">
-              <Calendar className="w-full rounded-lg border" />
+              <Calendar className="w-full rounded-lg border" /> {/* Menampilkan kalender */}
             </div>
           </div>
         </div>
@@ -109,16 +114,16 @@ export function Beritasidebar() {
                   />
                   <div className="p-5">
                     <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {item.title}
+                      {item.title} {/* Judul berita */}
                     </h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">
-                      {item.description}
+                      {item.description} {/* Deskripsi berita */}
                     </p>
                     <a
                       href={item.link} // Ganti dengan link dari item
                       className="text-blue-600 hover:underline"
                     >
-                      Read more
+                      Read more {/* Tautan untuk membaca lebih lanjut */}
                     </a>
                   </div>
                 </Card>

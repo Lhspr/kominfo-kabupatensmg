@@ -1,3 +1,4 @@
+// import library dan komponen yang diperlukan
 import React, { useEffect, useState } from 'react';
 import {
   Disclosure,
@@ -17,12 +18,16 @@ import Image from 'next/image';
 import { Navbar } from 'flowbite-react';
 import { Link as ScrollLink } from 'react-scroll';
 
+// fungsi untuk menggabungkan kelas css
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
+// component utama
 const FixNavigation = () => {
+  // menggunakan useState untuk menyimpan value
   const [isActive, setIsActive] = useState(false);
+  // fungsi untuk scrool to footer
   const handleScrollToFooter = () => {
     const footer = document.getElementById('Footer');
     if (footer) {
@@ -30,6 +35,7 @@ const FixNavigation = () => {
     }
   };
 
+  // useEffect untuk mendeteksi scroll pada halaman dan merubah status navbar
   useEffect(() => {
     const handleScroll = () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
@@ -41,10 +47,11 @@ const FixNavigation = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${isActive
-        ? 'bg-blue-900 shadow-md text-slate-100'
-        : 'bg-transparent text-gray-800'
-        }`}
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        isActive
+          ? 'bg-blue-900 shadow-md text-slate-100'
+          : 'bg-transparent text-gray-800'
+      }`}
     >
       {({ open }) => (
         <>
@@ -116,7 +123,6 @@ const FixNavigation = () => {
                             </Link>
                           )}
                         </MenuItem>
-
                       </MenuItems>
                     </Transition>
                   </Menu>

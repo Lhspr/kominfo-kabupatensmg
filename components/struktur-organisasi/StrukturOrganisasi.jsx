@@ -21,8 +21,8 @@ export function StrukturOrganisasi() {
             width={2000}  // Lebar gambar
             height={1500} // Tinggi gambar
             src={gambar2}
-            alt="Gambar Struktur Organisasi"
-            className="w-full h-auto object-cover"
+            alt="Gambar Struktur Organisasi" // Deskripsi gambar untuk aksesibilitas
+            className="w-full h-auto object-cover" // Mengatur ukuran dan tampilan gambar
           />
         </div>
       </Card>

@@ -1,5 +1,6 @@
 'use client';
 
+// mengimport library yang dibutuhkan
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Pastikan untuk mengimpor ikon yang diperlukan
 import Image from 'next/image';

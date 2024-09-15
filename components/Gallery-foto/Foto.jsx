@@ -10,27 +10,28 @@ import { fetchPhotoDatas } from '@/services/photo_services';
 
 export function Foto() {
   // State untuk mengelola pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [photos, setPhotos] = useState([])
+  const [currentPage, setCurrentPage] = useState(1); // Halaman saat ini
+  const [photos, setPhotos] = useState([]); // Daftar foto yang diambil
   const photosPerPage = 9; // Jumlah foto per halaman
 
-  // fetching data menggunakan services function
+  // Fungsi untuk mengambil data foto menggunakan service
   const fetchData = async () => {
     try {
-      const data = await fetchPhotoDatas('photos')
+      const data = await fetchPhotoDatas('photos'); // Mengambil data foto
       if (data) {
-        setPhotos(data)
+        setPhotos(data); // Menyimpan data foto ke state
       }
     } catch (error) {
-      console.error("Error Fetching data Photos", error)
+      console.error("Error Fetching data Photos", error); // Menangani error
     }
   }
 
+  // Fungsi untuk mengubah halaman
   const onPageChange = (page) => {
-    setCurrentPage(page);
+    setCurrentPage(page); // Mengatur halaman saat ini
   };
 
-  const totalPages = Math.ceil(photos.length / photosPerPage);
+  const totalPages = Math.ceil(photos.length / photosPerPage); // Total halaman
 
   // Menentukan foto yang akan ditampilkan di halaman saat ini
   const currentPhotos = photos.slice(
@@ -39,7 +40,7 @@ export function Foto() {
   );
 
   useEffect(() => {
-    fetchData()
+    fetchData(); // Memanggil fungsi fetchData saat komponen dimuat
   }, [0]);
 
   return (
@@ -64,7 +65,7 @@ export function Foto() {
                       width={100}
                       height={100}
                       src={item.file_path}
-                      alt={`Kegiatan Diskominfo ${index + 1}`}
+                      alt={`Kegiatan Diskominfo ${index + 1}`} // Deskripsi gambar
                       className="w-full h-auto"
                     />
                   </Card>
@@ -77,9 +78,9 @@ export function Foto() {
 
       {/* Pagination */}
       <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={onPageChange}
+        currentPage={currentPage} // Halaman saat ini
+        totalPages={totalPages} // Total halaman
+        onPageChange={onPageChange} // Fungsi untuk mengubah halaman
         className="mt-6"
       />
     </div>

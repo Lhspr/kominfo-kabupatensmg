@@ -1,8 +1,11 @@
-import { Foto } from "@/components/Gallery-foto/Foto";
+import { Foto } from '@/components/Gallery-foto/Foto';
+
+// Fungsi utama untuk halaman foto
 export default function fotopage() {
   return (
     <div className="container mx-auto">
-      <Foto/>
+      {/* Menampilkan komponen Foto */}
+      <Foto />
     </div>
   );
 }

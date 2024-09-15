@@ -1,13 +1,14 @@
 'use client';
-
+// mengimport library yang diperlukan
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Menggunakan react-icons untuk ikon panah
 
 export function Video() {
+  // membuat useState untuk menyimpan variable
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 3; // Jumlah video per halaman
 
-  // Daftar video
+  // Daftar video dummy
   const allVideos = [
     {
       id: "video_id_1",
@@ -59,6 +60,7 @@ export function Video() {
       <div className="flex w-full max-w-screen-lg flex-col lg:flex-row">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {/* Embeds Video */}
+          {/* mapping data video */}
           {currentVideos.map((video) => (
             <div key={video.id} className="flex justify-center">
               <div className="w-full max-w-md">

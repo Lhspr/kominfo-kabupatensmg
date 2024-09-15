@@ -11,6 +11,7 @@ export function BeritaTransparasi() {
 
   // Data card dengan berita viral di Indonesia
   const cards = [
+    // Setiap objek card berisi id, judul, deskripsi, dan gambar
     {
       id: 1,
       title: 'Gempa Bumi Cianjur: Ratusan Rumah Rusak Berat',
@@ -70,7 +71,7 @@ export function BeritaTransparasi() {
         </small>
       </h1>
 
-      {/* Search Input */}
+      {/* Input pencarian untuk mencari berita */}
       <div className="w-full max-w-screen-md mb-8">
         <input
           type="search"
@@ -90,7 +91,7 @@ export function BeritaTransparasi() {
                 key={card.id}
                 className="flex flex-col justify-between h-full shadow-lg"
               >
-                {/* Image */}
+                {/* Gambar berita */}
                 <Image
                   width={400}
                   height={200}
@@ -98,7 +99,7 @@ export function BeritaTransparasi() {
                   alt={card.title}
                   className="object-cover w-full h-48"
                 />
-                {/* Content */}
+                {/* Konten berita */}
                 <div className="p-4 flex-grow flex flex-col justify-between">
                   <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
                     {card.title}
@@ -127,6 +128,7 @@ export function BeritaTransparasi() {
           <Card className="w-full">
             <h3 className="text-xl font-bold mb-4">KATEGORI BERITA</h3>
             <ul className="list-none space-y-2">
+              {/* Daftar kategori berita */}
               <li className="flex items-center text-gray-700">
                 <span className="mr-2 text-orange-500">▶</span> Berita Semarang
               </li>
@@ -143,6 +145,7 @@ export function BeritaTransparasi() {
           <Card className="mt-6">
             <h3 className="text-xl font-bold mb-4">TERPOPULER</h3>
             <div className="space-y-4">
+              {/* Daftar berita terpopuler */}
               <div className="flex flex-col">
                 <Image
                   src={gambar4}

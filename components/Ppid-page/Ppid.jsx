@@ -1,29 +1,36 @@
 import React from 'react';
 
+/**
+ * Komponen Ppid
+ * Komponen ini menampilkan halaman layanan PPID yang terdiri dari beberapa bagian:
+ * 1. Layanan PPID
+ * 2. Informasi PPID
+ * 3. Survey Kepuasan Masyarakat
+ */
 export default function Ppid() {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Section 1: Layanan PPID */}
+      {/* Bagian 1: Layanan PPID */}
       <section className="py-16 bg-white">
         <div className="container mx-auto">
           <h1 className="text-center text-4xl font-bold mb-8">LAYANAN PPID</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1: Form Informasi Publik */}
+            {/* Kartu 1: Form Informasi Publik */}
             <div className="bg-gray-50 p-8 rounded shadow-md text-center">
               <h2 className="text-xl font-semibold mb-4">FORMULIR INFORMASI PUBLIK</h2>
               <button className="px-4 py-2 bg-blue-600 text-white rounded">Isi Formulir</button>
             </div>
-            {/* Card 2: Form Keberatan Informasi */}
+            {/* Kartu 2: Form Keberatan Informasi */}
             <div className="bg-gray-50 p-8 rounded shadow-md text-center">
               <h2 className="text-xl font-semibold mb-4">FORM KEBERATAN INFORMASI</h2>
               <button className="px-4 py-2 bg-blue-600 text-white rounded">Isi Formulir</button>
             </div>
-            {/* Card 3: Formulir Pengaduan */}
+            {/* Kartu 3: Formulir Pengaduan */}
             <div className="bg-gray-50 p-8 rounded shadow-md text-center">
               <h2 className="text-xl font-semibold mb-4">FORMULIR PENGADUAN</h2>
               <button className="px-4 py-2 bg-blue-600 text-white rounded">Isi Formulir</button>
             </div>
-            {/* Card 4: SIPIPI */}
+            {/* Kartu 4: SIPIPI */}
             <div className="bg-gray-50 p-8 rounded shadow-md text-center">
               <h2 className="text-xl font-semibold mb-4">SIPIPI</h2>
               <button className="px-4 py-2 bg-blue-600 text-white rounded">Isi Formulir</button>
@@ -32,7 +39,7 @@ export default function Ppid() {
         </div>
       </section>
 
-      {/* Section 2: PPID Information */}
+      {/* Bagian 2: Informasi PPID */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-8">PPID</h1>
@@ -60,7 +67,7 @@ export default function Ppid() {
         </div>
       </section>
 
-      {/* Section 3: Survey Kepuasan Masyarakat */}
+      {/* Bagian 3: Survey Kepuasan Masyarakat */}
       <section className="py-16 bg-gray-800 text-white">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-8">SURVEY KEPUASAN MASYARAKAT</h1>

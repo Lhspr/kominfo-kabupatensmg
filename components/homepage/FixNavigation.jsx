@@ -155,7 +155,7 @@ const FixNavigation = () => {
                             </Link>
                           )}
                         </MenuItem>
-                        <MenuItem>
+                        {/* <MenuItem>
                           {({ active }) => (
                             <Link
                               href="/berita-transparasi"
@@ -167,7 +167,7 @@ const FixNavigation = () => {
                               Berita Transparasi
                             </Link>
                           )}
-                        </MenuItem>
+                        </MenuItem> */}
                       </MenuItems>
                     </Transition>
                   </Menu>
@@ -365,13 +365,13 @@ const FixNavigation = () => {
                   >
                     Berita Semarang
                   </Disclosure.Button>
-                  <Disclosure.Button
+                  {/* <Disclosure.Button
                     as="a"
                     href="/berita-transparasi"
                     className="block py-2 text-sm text-gray-700"
                   >
                     Berita Transparasi
-                  </Disclosure.Button>
+                  </Disclosure.Button> */}
                 </DisclosurePanel>
               </Disclosure>
               <Disclosure.Button

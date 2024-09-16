@@ -36,7 +36,7 @@ export function Beritasidebar() {
       <div className="flex flex-wrap w-full max-w-screen-xl">
         {/* Sidebar */}
         <div className="w-full md:w-1/4 mb-6 md:mb-0">
-          <div className="bg-white shadow-md rounded-lg p-4 h-full flex flex-col">
+          <div className="bg-white shadow-md rounded-lg p-4 flex flex-col">
             {/* Menu Sidebar */}
             <ul className="space-y-2 mb-4">
               {/* Item menu untuk berita terbaru */}
@@ -110,7 +110,7 @@ export function Beritasidebar() {
                     height={250}
                     src={item.image || gambar2} // Ganti dengan gambar dari item
                     alt={`Gambar ${index + 1}`}
-                    className="object-cover h-full w-full"
+                    className="object-cover h-32 w-full"
                   />
                   <div className="p-5">
                     <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
